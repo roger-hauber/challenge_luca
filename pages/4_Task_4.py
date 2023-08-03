@@ -29,9 +29,12 @@ GROUP BY city, hour
 """, con = conn)
 
 def by_hour(city):
+    sales_by_hour["hour"] = sales_by_hour["hour"].apply(int)
     plt = sns.barplot(y = sales_by_hour.loc[sales_by_hour.city == city, "total"],
                 x = sales_by_hour.loc[sales_by_hour.city == city, "hour"])
     plt.set_title(f"Sales per hour in {city}\n", fontdict={"size": 18, "weight":"bold"})
+    #plt.set_xticks(range(24), labels=range(24))
+    #plt.set_xlim(0,24)
     return plt
 
 # set up multiselect for val and time

@@ -54,3 +54,15 @@ fig_col1, fig_col2 = st.columns(2)
     #fig = task_one(val=val, time=time)
 
     #st.pyplot(fig.figure)
+
+
+### Write some header -- info
+
+
+col1, col2, col3 = st.columns([1,2,1])
+with col2:
+    st.markdown("# Data Challenge @luca")
+
+l_col, m_col, r_col = st.columns(3)
+with m_col:
+    st.image("data/luca.png")
